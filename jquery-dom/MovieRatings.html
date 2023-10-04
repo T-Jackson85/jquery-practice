@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ratings App</title>
+</head>
+<h1>Movies And Ratings!!</h1>
+<body>
+    <form id="new-movie">
+        <input id="movie" type="text" placeholder="Enter movie">
+        <input  id="rating" type="text" pkaceholder="Enter rating">
+        <button>Submit</button>
+    </form>
+    <div id="movie-table"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+
+        let item = 0;
+
+        let list = [];
+
+        $(function() {
+            $("#new-movie").on("submit", function(e) {
+                e.preventDefault();
+
+                let movieName = $("#movie").val();
+                let movieRating = $("#rating").val();
+
+                let newMovies = {movieName, movieRating};
+
+                list.push(newMovies);
+
+
+
+                $("#movie-table").append($('checkbox', newMovies));
+
+            });
+
+            $('checkbox').on('click', function() {
+                $(newMovies).remove();
+            })
+
+
+        });
+
+    </script>
+</body>
+</html>
